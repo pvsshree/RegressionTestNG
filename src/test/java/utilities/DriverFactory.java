@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 public static WebDriver driver;
-
+//DriverFactory to staart the browser
 public static WebDriver initDriver(String browser) {
 
     if (browser.equalsIgnoreCase("chrome")) {
@@ -22,25 +22,15 @@ public static WebDriver initDriver(String browser) {
     }
 
     driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(500));
+   // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(500));
 
     return driver;
 }
 
-public static void quitDriver() {
+/*public static void quitDriver() {
     if (driver != null) {
         driver.quit();
-    }
-}
-
-
-
-
-
-
-
-
-
+    }}*/
 
 
 

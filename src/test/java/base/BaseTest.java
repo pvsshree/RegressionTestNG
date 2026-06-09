@@ -15,18 +15,16 @@ public class BaseTest {
 
 	    @BeforeMethod
 	    public void setup() {
-
-	        driver = DriverFactory.initDriver(
-	                config.get("browser")
-	               
-	        );
+String a = config.get("browser");
+System.out.println(a);
+	        driver = DriverFactory.initDriver(a);
 
 	        driver.get(config.get("url"));
 	    }
 
 	    @AfterMethod
 	    public void tearDown() {
-	        DriverFactory.quitDriver();
+	       // DriverFactory.quitDriver();
 	
 	
 	
