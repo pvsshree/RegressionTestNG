@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="SauceDemo Regression Suite">
-  <test name="LoignTest">
-   <groups>
-            <run>
-                <include name="regression"/>
-            </run>
-        </groups>
+<suite thread-count="2" parallel="methods" name="Suite">
+  <test thread-count="2" parallel="methods" name="Test">
     <classes>
+      <class name="base.BaseTest"/>
       <class name="tests.LoignTest"/>
     </classes>
   </test> <!-- Test -->

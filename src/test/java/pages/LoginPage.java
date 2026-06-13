@@ -9,7 +9,7 @@ WebDriver driver;
 	By username = By.id("user-name");
 	By password = By.id("password");
 	By loginButton = By.id("login-button");
-//	By error = By.xpath("//button[@class='error-button']");
+	By error = By.xpath("//button[@class='error-button']");
 	
 	//constructor
 	public LoginPage(WebDriver driver)
@@ -26,9 +26,19 @@ WebDriver driver;
 		driver.findElement(username).sendKeys(user);
 		driver.findElement(password).sendKeys(pass);
 		driver.findElement(loginButton).click();
+
 	}
 	
+	public void clickLogin()
+	{
+	driver.findElement(loginButton).click();
+	}
 	
+	public String errormsg() {
+	return driver.findElement(error).getText();
+	}
+
+
 	
 	
 	
