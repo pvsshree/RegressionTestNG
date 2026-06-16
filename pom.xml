@@ -5,12 +5,13 @@
   <version>0.0.1-SNAPSHOT</version>
 
 <dependencies>
- <!-- Selenium -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>4.20.0</version>
-        </dependency>
+<!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.44.0</version>
+    <scope>compile</scope>
+</dependency>
 
         <!-- TestNG -->
         <dependency>

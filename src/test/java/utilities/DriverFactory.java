@@ -33,10 +33,11 @@ public static WebDriver getDriver()
     return driver.get();
 }
 
-/*public static void quitDriver() {
-    if (driver != null) {
-        driver.quit();
-    }}*/
+public static void quitDriver() {
+    if (driver.get() != null) {
+        driver.get().quit();
+        driver.remove();
+    }}
 
 
 

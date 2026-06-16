@@ -9,7 +9,8 @@ WebDriver driver;
 	By username = By.id("user-name");
 	By password = By.id("password");
 	By loginButton = By.id("login-button");
-	By error = By.xpath("//button[@class='error-button']");
+	By error = By.id("login-button");
+		
 	
 	//constructor
 	public LoginPage(WebDriver driver)

@@ -7,29 +7,38 @@ import base.BaseTest;
 import pages.LoginPage;
 import utilities.DriverFactory;
 
-public class LoignTest extends BaseTest {
+public class LoginTest extends BaseTest {
 	
 	
 	@Test (groups = {"regression"})
-	public void LoginMethodTest()
+	public void LoginMethodTest() throws InterruptedException
 	{
 		System.out.println("HEy");
 		LoginPage login = new LoginPage(DriverFactory.getDriver());
 		System.out.println("done");
 		login.loginMethod("standard_user", "secret_sauce");
 		System.err.println("error");
+		System.out.println(
+			    "Running " + Thread.currentThread().getName());
 		Assert.assertTrue(DriverFactory.getDriver().getCurrentUrl().contains("inventory"));
+		Thread.sleep(2000);
 			
 	}
 
-	public void errormsgVerify() {
+	@Test (groups = {"Smoke"})
+	public void loginClick() throws InterruptedException {
 		LoginPage login = new LoginPage(DriverFactory.getDriver());
-		login.errormsg();
-		String actual = DriverFactory.getDriver().getTitle();
-		Assert.assertTrue(actual.matches("Epic sadface: Username is required"));
+		login.clickLogin();
+		String actual = login.errormsg();
+		System.out.println(actual);
+		Assert.assertEquals(actual, "Epic sadface: Username is required");
+		System.out.println("passed");
+		System.out.println(
+			    "Running " + Thread.currentThread().getName());
+	    
+		Thread.sleep(2000);
 		}
 
-	
 	
 	
 	

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite thread-count="2" parallel="methods" name="Suite">
-  <test thread-count="2" parallel="methods" name="Test">
+<suite  name="Suite"  thread-count="3">
+  <test name="Test">
     <classes>
-      <class name="base.BaseTest"/>
-      <class name="tests.LoignTest"/>
+      <class name="tests.LoginTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
