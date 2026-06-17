@@ -1,7 +1,11 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 WebDriver driver;
@@ -9,7 +13,7 @@ WebDriver driver;
 	By username = By.id("user-name");
 	By password = By.id("password");
 	By loginButton = By.id("login-button");
-	By error = By.id("login-button");
+	By error = By.xpath("//h3[contains(text(),'Epic sadface: Username is required')]");
 		
 	
 	//constructor
@@ -36,7 +40,10 @@ WebDriver driver;
 	}
 	
 	public String errormsg() {
-	return driver.findElement(error).getText();
+		WebDriverWait wait = new WebDriverWait(	driver, Duration.ofSeconds(50));
+		String msg = wait.until(ExpectedConditions.visibilityOfElementLocated(error)).getText();
+		System.out.println(msg);
+		return msg;
 	}
 
 

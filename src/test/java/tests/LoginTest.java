@@ -30,6 +30,7 @@ public class LoginTest extends BaseTest {
 		LoginPage login = new LoginPage(DriverFactory.getDriver());
 		login.clickLogin();
 		String actual = login.errormsg();
+		System.out.println("Actual Error Message = [" + actual + "]");
 		System.out.println(actual);
 		Assert.assertEquals(actual, "Epic sadface: Username is required");
 		System.out.println("passed");
