@@ -14,7 +14,7 @@ public class LoginTest extends BaseTest {
 	public void LoginMethodTest() throws InterruptedException
 	{
 		System.out.println("HEy");
-		LoginPage login = new LoginPage(DriverFactory.getDriver());
+		LoginPage login = new LoginPage(driver);
 		System.out.println("done");
 		login.loginMethod("standard_user", "secret_sauce");
 		System.err.println("error");
@@ -27,7 +27,7 @@ public class LoginTest extends BaseTest {
 
 	@Test (groups = {"Smoke"})
 	public void loginClick() throws InterruptedException {
-		LoginPage login = new LoginPage(DriverFactory.getDriver());
+		LoginPage login = new LoginPage(driver);
 		login.clickLogin();
 		String actual = login.errormsg();
 		System.out.println("Actual Error Message = [" + actual + "]");
