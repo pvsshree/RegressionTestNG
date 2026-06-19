@@ -1,4 +1,4 @@
-package pages;
+package com.pages;
 
 import java.time.Duration;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
+public class LoginDemoPage {
 WebDriver driver;
 
 	By username = By.id("user-name");
@@ -17,7 +17,7 @@ WebDriver driver;
 		
 	
 	//constructor
-	public LoginPage(WebDriver driver)
+	public LoginDemoPage(WebDriver driver)
 	{
 		this.driver = driver;
 		
