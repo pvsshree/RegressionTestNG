@@ -20,6 +20,7 @@ public WebDriver init_driver(String browser) {
         WebDriverManager.chromedriver().setup();
        // driver = new ChromeDriver();
     tldriver.set(new ChromeDriver());
+    System.err.println("Accepted");
     
     } else if (browser.equalsIgnoreCase("edge")) {
         WebDriverManager.edgedriver().setup();

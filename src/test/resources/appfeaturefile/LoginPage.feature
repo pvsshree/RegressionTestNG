@@ -9,10 +9,9 @@ Then Page title should be "Swag Labs"
 
 
 Scenario: Login with correct credentials
-When User enters username as "standard_user"
-And User enters password as "secret_sauce"
+When User enters username as "standard_user" and password as "secret_sauce"
 And User clicks on Login button
-Then User gets title of the page as "Swag Labs"
+Then Page title should be "Swag Labs"
 
 Scenario: Login with invalid credential
 When User enters username as "standard_user"
