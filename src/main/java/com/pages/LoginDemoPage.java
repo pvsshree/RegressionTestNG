@@ -14,7 +14,7 @@ WebDriver driver;
 	By username = By.id("user-name");
 	By password = By.id("password");
 	By loginButton = By.id("login-button");
-	By error = By.xpath("//h3[contains(text(),'Epic sadface: Username is required')]");
+	By error = By.xpath("//h3[[data-test='error']");
 		
 	
 	//constructor
@@ -37,8 +37,16 @@ WebDriver driver;
 	
 	public void clickLogin()
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton)).click();
+	}
+	
+	
+	
+	public void wrongUser(String user_name, String pass_word) {
+		driver.findElement(username).sendKeys(user_name);
+		driver.findElement(password).sendKeys(pass_word);
+		driver.findElement(loginButton).click();	
 	}
 	
 	public String errormsg() {

@@ -13,18 +13,21 @@ When User enters username as "standard_user" and password as "secret_sauce"
 And User clicks on Login button
 Then Page title should be "Swag Labs"
 
-Scenario: Login with invalid credential
-When User enters username as "standard_user"
-And User enters password as "secret"
+Scenario Outline: Login with invalid credential
+When the user enters username "<username>" and password "<password>"
 And User clicks on Login button
-Then User gets error message as "Epic sadface: Username and password do not match any user in this service"
+Then "<Error>" Error message should be displayed
 
-Scenario: Login with invalid credential
-When User enters username as "admin"
-And User enters password as "secret_sauce"
-And User clicks on Login button
-Then User gets error message as "Epic sadface: Username and password do not match any user in this service"
+Examples:
+      | username        | password      | error                              |
+      | locked_out_user | secret_sauce  | locked out                         |
+      | admin           | admin         | Epic sadface: Username and password do not match any user in this service                      |
+      |                 | secret_sauce  | Epic sadface: Username is required |
+      | standard_user   |               | Epic sadface: Password is required |
+      |                 |               |Epic sadface: Username is required  |
 
-Scenario: User directly clicks on Login button
-When User clicks on Login button without entering username and password
-Then User gets error message as "Epic sadface: Username is required"
+
+
+
+
+
